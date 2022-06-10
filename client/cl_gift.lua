@@ -13,7 +13,12 @@ RegisterNetEvent('cpl_tearp:starteritem', function()
     for i,v in ipairs(item_array ) do
         itemchance = math.random(0,1)
         if itemchance == 1 then
-            TriggerServerEvent('cpl_tearp:starteritem:giveitem', v)
+            TriggerEvent('cpl_tearp:starteritem:item', v)
         end
     end
+end)
+
+RegisterNetEvent("cpl_tearp:starteritem:item", function(v)
+    local idfktbh = 'ghjgjbvhfhfh'
+    TriggerServerEvent('cpl_tearp:starteritem:giveitem', v, idfktbh)
 end)

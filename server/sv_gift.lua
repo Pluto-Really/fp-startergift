@@ -8,8 +8,13 @@ QBCore.Functions.CreateUseableItem("starter_gift", function(source, item)
     end
 end)
 
-RegisterServerEvent('cpl_tearp:starteritem:giveitem', function(item)
+RegisterServerEvent('cpl_tearp:starteritem:giveitem', function(item, idfktbh)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
-    Player.Functions.AddItem(item, 1)
+    if idfktbh == 'ghjgjbvhfhfh' then 
+        Player.Functions.AddItem(item, 1)
+        TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item], "add")
+    else
+        DropPlayer(src, 'Bitch.')
+    end
 end)
