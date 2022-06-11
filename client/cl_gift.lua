@@ -10,7 +10,8 @@ RegisterNetEvent('cpl_tearp:starteritem', function()
     end
     UseParticleFxAssetNextCall("scr_rcbarry1")
     local part = StartParticleFxLoopedAtCoord('scr_alien_teleport', pedcoords.x, pedcoords.y, pedcoords.z, 0.0, 0.0, 0.0, 1.0, false, false, false, false)
-    for i,v in ipairs(item_array ) do
+    for i,v in ipairs(item_array) do
+        itemchance = math.random(0,1)
         if itemchance == 1 then
             TriggerEvent('cpl_tearp:starteritem:item', v)
         end
